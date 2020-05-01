@@ -10,7 +10,9 @@
     "coveralls": "./node_modules/.bin/coveralls < ./bin/coverage/lcov/lcov.info",
     "build": "./node_modules/.bin/webpack -d --config webpack.config.js & node-sass --output-style compressed src/main.scss bin/main.css",
     "dev": "./node_modules/.bin/webpack -d --watch --config webpack.config.js",
-    "css": "node-sass --output-style compressed src/main.scss bin/main.css & node-sass --output-style compressed -w src/main.scss bin/main.css"
+    "css": "node-sass --output-style compressed src/main.scss bin/main.css & node-sass --output-style compressed -w src/main.scss bin/main.css",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -51,6 +53,8 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
-    "lodash": "^4.15.0"
-  }
+    "lodash": "^4.15.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
